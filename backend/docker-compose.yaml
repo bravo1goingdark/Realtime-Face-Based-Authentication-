@@ -1,14 +1,14 @@
 version: '3.8'
 services:
-  postgres:
-    image: postgres
+  mongodb:
+    image: mongo
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: face_auth_db
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: face_auth_db
     ports:
-      - "5432:5432"
+      - "27017:27017"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - mongodbv:/data/db
 volumes:
-  postgres_data:
+  mongodbv:
